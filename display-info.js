@@ -1,14 +1,13 @@
 const body = document.getElementsByTagName("body")[0]
-const urlParams = new URLSearchParams(window.location.search)
-const fname = urlParams.get("fname")
-const lname = urlParams.get("lname")
-const email = urlParams.get("email")
-const phoneNumber = urlParams.get("phone")
-const address1 = urlParams.get("address1")
-const address2 = urlParams.get("address2")
-const city = urlParams.get("city")
-const zipCode = urlParams.get("zipcode")
-const state = urlParams.get("state")
+const fname = localStorage.getItem("fname")
+const lname = localStorage.getItem("lname")
+const email = localStorage.getItem("email")
+const phone = localStorage.getItem("phone")
+const address1 = localStorage.getItem("address1")
+const address2 = localStorage.getItem("address2")
+const city = localStorage.getItem("city")
+const zip = localStorage.getItem("zip")
+const state = localStorage.getItem("state")
 
 const greeting = () => {
   const h2 = document.createElement("h2")
@@ -25,7 +24,7 @@ const displayClientInformation = () => {
 
   fullNameLI.textContent = `Full name: ${fname} ${lname}`
   emailLI.textContent = `Email: ${email}`
-  const value = phoneNumber
+  const value = phone
     .replace("(", "")
     .replace(")", "")
     .replaceAll("-", "")
@@ -37,7 +36,7 @@ const displayClientInformation = () => {
   phoneNumberLI.textContent = `Phone Number: ${ph}`
   addressLI.textContent = `Address: ${address1}`
   if (address2 !== "") addressLI.textContent += `, ${address2}`
-  addressLI.textContent += `, ${city}, ${state}, ${zipCode}`
+  addressLI.textContent += `, ${city}, ${state}, ${zip}`
   ul.appendChild(fullNameLI)
   ul.appendChild(emailLI)
   ul.appendChild(phoneNumberLI)

@@ -11,6 +11,7 @@ const state = document.getElementById("state")
 const submitBtn = document.getElementById("submit")
 
 const checkInfo = (e) => {
+  e.preventDefault()
   if (!checkName(fname)) return error("Please enter a valid first name")
   if (!checkName(lname)) return error("Please enter a valid last name")
   if (!checkEmail()) return error("Please enter a valid email address")
@@ -20,6 +21,8 @@ const checkInfo = (e) => {
   if (!checkZip()) return error("Please enter a valid zip code")
   if (!checkState())
     return error("Please choose a state from the dropdown menu")
+  saveInfo()
+  window.location.href = "/display-info.html"
 }
 
 const checkName = (name) => {
@@ -124,4 +127,16 @@ const error = (errorMsg) => {
     form.removeChild(p)
     submitBtn.disabled = false
   }, 1500)
+}
+
+const saveInfo = () => {
+  localStorage.setItem("fname", fname.value.trim())
+  localStorage.setItem("lname", lname.value.trim())
+  localStorage.setItem("email", email.value.trim())
+  localStorage.setItem("phone", phoneNumber.value.trim())
+  localStorage.setItem("address1", address1.value.trim())
+  localStorage.setItem("address2", address2.value.trim())
+  localStorage.setItem("city", city.value.trim())
+  localStorage.setItem("zip", zipCode.value.trim())
+  localStorage.setItem("state", state.value.trim())
 }
