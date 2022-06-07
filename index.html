@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Customer Registration Form</h1>
-    <form action="#" onsubmit="return submitForm(event)">
+    <form action="/display-info.html" method="GET" onsubmit="checkInfo(event)">
       <label for="fname">First name:</label>
       <input type="text" name="fname" id="fname" placeholder="ex. Timmy" />
       <label for="lname">Last name:</label>
@@ -44,6 +44,8 @@
       />
       <label for="city">City:</label>
       <input type="text" name="city" id="city" placeholder="ex. Dimmsdale" />
+      <label for="zipcode">Zip code:</label>
+      <input type="text" name="zipcode" id="zipcode" placeholder="ex. 01234" />
       <label for="state">State:</label>
       <select name="state" id="state">
         <option value="" selected="selected">Select a State</option>
@@ -99,8 +101,8 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
-      <button type="submit" id="submit">Register</button>
+      <input id="submit" name="submit" type="submit" value="Register"></input>
     </form>
-    <script src="js.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

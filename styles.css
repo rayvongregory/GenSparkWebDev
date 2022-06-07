@@ -52,7 +52,7 @@ form>*:nth-child(2n) {
     padding: 0.5rem;
 }
 
-form>button {
+#submit {
     grid-column: 2;
     width: fit-content;
     margin: 30px auto 0;
@@ -67,6 +67,18 @@ form>button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-form>button:hover {
+#submit:hover {
     background-color: #adff2f;
+}
+
+ul {
+    width: fit-content;
+    margin: 30px auto 0;
+    line-height: 2rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    white-space: nowrap;
 }
